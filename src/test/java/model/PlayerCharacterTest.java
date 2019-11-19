@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 class PlayerCharacterTest {
 
     @Test
-    public void name() {
+    public void playerCharacterRollsANumBetween0And100() {
         PlayerCharacter playerCharacter = new PlayerCharacter();
 
         int roll = playerCharacter.rollAnAction();
