@@ -2,8 +2,9 @@ package model;
 
 public class PlayerCharacter extends Character {
 
-    public String name;
-    public int experience;
-    public int level;
+    public PlayerCharacter(String name) {
+        this.name = name;
+    }
+    private String name;
 
 }
