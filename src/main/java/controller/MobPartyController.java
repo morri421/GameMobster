@@ -3,6 +3,7 @@ package controller;
 import model.PlayerCharacter;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 public class MobPartyController {
 
@@ -22,5 +23,17 @@ public class MobPartyController {
     public void addMemberToParty(String name) {
         PlayerCharacter playerCharacter = new PlayerCharacter(name);
         party.add(playerCharacter);
+    }
+
+
+    public void removeMemberFromParty(String name) {
+        Iterator playerIterator = party.iterator();
+
+        while (playerIterator.hasNext()) {
+            PlayerCharacter character = (PlayerCharacter) playerIterator.next();
+            if (character.getName().equals(name)) {
+                playerIterator.remove();
+            }
+        }
     }
 }
