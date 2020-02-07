@@ -1,19 +1,19 @@
 package controller;
 
+import com.sun.xml.internal.bind.v2.TODO;
 import model.PlayerCharacter;
 
 import java.util.ArrayList;
 import java.util.Iterator;
 
-public class MobPartyController {
+public class MobPartyController {  //TODO: You need to split MobPartyController into another class that is a MobCreator and remove the add/remove methods
 
     private ArrayList<PlayerCharacter> party;
+    private int minutesBetweenRounds;
 
-    private int timeBetweenRounds;
-
-    public MobPartyController() {
+    public MobPartyController(int minutesBetweenRounds) {
         this.party = new ArrayList<PlayerCharacter>();
-        this.timeBetweenRounds = 0;
+        this.minutesBetweenRounds = minutesBetweenRounds;
     }
 
     public ArrayList<PlayerCharacter> getParty() {
@@ -25,7 +25,6 @@ public class MobPartyController {
         party.add(playerCharacter);
     }
 
-
     public void removeMemberFromParty(String name) {
         Iterator playerIterator = party.iterator();
 
@@ -35,5 +34,9 @@ public class MobPartyController {
                 playerIterator.remove();
             }
         }
+    }
+
+    public void startRound() {
+        RoundTimerController roundTimerController = new RoundTimerController(minutesBetweenRounds);
     }
 }

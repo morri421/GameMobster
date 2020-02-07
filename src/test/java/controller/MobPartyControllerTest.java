@@ -9,7 +9,7 @@ public class MobPartyControllerTest {
 
     @Test
     public void addPlayerToMob() {
-        MobPartyController mobPartyController = new MobPartyController();
+        MobPartyController mobPartyController = new MobPartyController(1);
 
         mobPartyController.addMemberToParty("Ryan");
 
@@ -18,7 +18,7 @@ public class MobPartyControllerTest {
 
     @Test
     public void removePlayerFromMob() {
-        MobPartyController mobPartyController = new MobPartyController();
+        MobPartyController mobPartyController = new MobPartyController(1);
 
         mobPartyController.addMemberToParty("Ryan");
         mobPartyController.removeMemberFromParty("Ryan");
