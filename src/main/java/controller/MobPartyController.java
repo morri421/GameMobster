@@ -36,7 +36,7 @@ public class MobPartyController {  //TODO: You need to split MobPartyController 
         }
     }
 
-    public void startRound() {
-        RoundTimerController roundTimerController = new RoundTimerController(minutesBetweenRounds);
+    public void startRound(PlayerCharacter player) {
+        RoundTimerController roundTimerController = new RoundTimerController(minutesBetweenRounds, player);
     }
 }

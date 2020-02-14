@@ -1,13 +1,15 @@
 package timer;
 
+import model.PlayerCharacter;
+
 import java.util.Timer;
 
 public class RoundTimer {
 
     Timer timer;
 
-    public RoundTimer(int minutes) {
+    public RoundTimer(int minutes, PlayerCharacter player) {
         this.timer = new Timer();
-        timer.schedule(new Round(), minutes * 1000);
+        timer.schedule(new Round(player), minutes * 1000);
     }
 }
